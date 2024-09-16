@@ -1,0 +1,25 @@
+version: '1'
+
+services:
+  mysql8:
+    image: mysql:8.0
+    restart: always
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+    environment:
+      MYSQL_DATABASE: 'be-mindfull'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - be-mindfull:/var/lib/mysql
+
+
+volumes:
+  be-mindfull:
+  postgres_data:
+    driver: local
