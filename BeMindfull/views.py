@@ -1,4 +1,5 @@
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.shortcuts import redirect, render
 
@@ -22,11 +23,13 @@ def custom_register(request):
 
        if form.is_valid():
            form.save()
-           return redirect("/home")
+           return redirect("login")
     else:
         form = UserCreationForm()
 
     return render(request, "register.html", { 'form': form })
 
+@login_required(login_url='login')
 def custom_home(request):
-    return render(request, "home.html")
+    template = "home.html"
+    return render(request, template)
