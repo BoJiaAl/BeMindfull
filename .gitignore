@@ -1,0 +1,5 @@
+.vscode
+.idea
+/djangoProject/__pycache__
+/BeMindfull/__pycache__
+/BeMindfull/migrations/__pycache__
