@@ -17,10 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from BeMindfull.views import custom_login, custom_register
+from BeMindfull.views import custom_login, custom_register, custom_home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', custom_login, name='login'),
-    path('register/', custom_register, name='register')
+    path('register/', custom_register, name='register'),
+    path('home/', custom_home, name='home')
 ]
