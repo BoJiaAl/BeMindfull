@@ -3,7 +3,6 @@ version: '1'
 services:
   mysql8:
     image: mysql:8.0
-    restart: always
     ulimits:
       nofile:
         soft: 65536
