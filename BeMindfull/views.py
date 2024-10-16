@@ -1,13 +1,8 @@
-<<<<<<< Updated upstream
-from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
-=======
 from django.contrib.auth import login, logout
->>>>>>> Stashed changes
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.shortcuts import redirect, render
 
-# Create your views here.
 def custom_login(request):
     if request.method == 'POST':
         form = AuthenticationForm(data=request.POST)
@@ -35,13 +30,9 @@ def custom_register(request):
 
 @login_required(login_url='login')
 def custom_home(request):
-<<<<<<< Updated upstream
     template = "home.html"
     return render(request, template)
-=======
-    return render(request, "home.html")
 
 def custom_logout(request):
     logout(request)
     return redirect("login")
->>>>>>> Stashed changes
