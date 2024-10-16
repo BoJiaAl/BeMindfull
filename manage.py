@@ -2,8 +2,6 @@
 import os
 import sys
 
-from django.core.management import call_command
-
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djangoProject.settings')

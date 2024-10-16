@@ -3,6 +3,7 @@ from enum import unique
 from django.contrib.auth.base_user import BaseUserManager, AbstractBaseUser
 from django.db import models
 
+
 # Create your models here.
 class UserManager(BaseUserManager):
     def create_user(self, username, password, device_id=None):
@@ -17,6 +18,7 @@ class UserManager(BaseUserManager):
     def create_superuser(self, username, password, device_id=None):
         return self.create_user(username, password, device_id)
 
+
 class User(AbstractBaseUser):
     username = models.CharField(max_length=255, unique=True)
     password = models.CharField(max_length=255)
@@ -29,6 +31,7 @@ class User(AbstractBaseUser):
 
     def __str__(self):
         return self.username
+
 
 class Notification(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='notification')
