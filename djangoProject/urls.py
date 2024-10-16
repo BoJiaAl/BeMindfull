@@ -15,14 +15,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.shortcuts import redirect
+from django.urls import path, re_path
 
 from BeMindfull.views import custom_login, custom_register, custom_home, custom_logout
+
+
+def redirect_to_home(request):
+    return redirect('home')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', custom_login, name='login'),
     path('register/', custom_register, name='register'),
     path('home/', custom_home, name='home'),
-    path('logout/', custom_logout, name='logout')
+    path('logout/', custom_logout, name='logout'),
+    re_path(r'^,*$', redirect_to_home, name='redirect_to_home')
 ]
