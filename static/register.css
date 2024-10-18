@@ -1,0 +1,79 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 16px;
+}
+
+.register-container {
+    background-color: #fff;
+    padding: 1.875rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 25rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    color: #333;
+}
+
+form {
+    p {
+        margin: 0.625rem 0;
+
+        label {
+            color: blue;
+        }
+    }
+
+    input {
+        width: 90%;
+        padding: 0.625rem;
+        margin: 0.625rem 0;
+        border: 0.063rem solid #ccc;
+        border-radius: 0.313rem;
+        font-size: 1rem;
+    }
+
+    input[name="csrfmiddlewaretoken"] {
+        display: none;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 0.313rem;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            max-width: 10rem;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    }
+
+    .errorlist {
+        color: red;
+        list-style-type: none;
+        padding: 0;
+        margin: 0.625rem 0;
+    }
+}
