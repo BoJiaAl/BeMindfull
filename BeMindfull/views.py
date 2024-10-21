@@ -2,6 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.shortcuts import redirect, render
+from notifypy import Notify
 
 
 def custom_login(request):
@@ -40,3 +41,9 @@ def custom_home(request):
 def custom_logout(request):
     logout(request)
     return redirect("login")
+
+def notifications():
+    notification = Notify()
+    notification.title = "test123"
+    notification.message = "this is a message"
+    notification.send
